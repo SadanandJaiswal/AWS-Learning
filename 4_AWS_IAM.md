@@ -30,6 +30,9 @@ It allows you to manage users, roles and permissions to define who can access wh
 - AWS SDKs and APIs offer programmatic, code-based access, allowing users to integrate AWS directly into their applications.
 
 
+### IAM Policies
+
+
 ### AWS CLI
 - Download CLI from google : aws official page
 - Install the aws cli msi installer
