@@ -85,12 +85,9 @@ Network Firewall rules that control the inbound and outbound traffic for instanc
 - Click on instance > Security > Security Groups
 - Edit inbound / outbound rule
 
-**Port 80** : HTTP Request
-**Port 20** : SSH Request
-**Prot 443** : HTTPS Request
 
 ### Important points related to security groups
-- Regin Specific Service
+- Region Specific Service
 - Only allow rule (not deny rule)
 - All inbound traffic are blocked and outbound allowed by default
 - **Define Rules** for :
@@ -142,6 +139,13 @@ ssh -i MyWebServer1-Key.pem ec2-user@<Instance PUblic IP>
 
 ### AWS EC2 Commands
 - Describe Instance : `aws ec2 describe-instances`
-- Stop Instance : `aws ec2 stop-instance --instace-ids <i-instanceid>`
-- Start Instance : `aws ec2 start-instance --instace-ids <i-instanceid>`
+- Stop Instance : `aws ec2 stop-instances --instance-ids <i-sid>`
+- Start Instance : `aws ec2 start-instances --instance-ids <i-instanceid>`
 - Get New IP after starting : `aws ec2 describe-instances --query "Reservations[*].Instances[*].[InstanceId,State.Name,PublicIpAddress]" --output table`
+
+
+### Instance Type 
+AWS provide different type of instances for different use, some category are : general purpose, Accelerated Computing, Compute Optimized
+
+### Pricing Option
+AWS have different price range for differnt type of service, like on-demand instance, saving plan, etc
