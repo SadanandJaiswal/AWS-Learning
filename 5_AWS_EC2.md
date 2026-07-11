@@ -149,3 +149,9 @@ AWS provide different type of instances for different use, some category are : g
 
 ### Pricing Option
 AWS have different price range for differnt type of service, like on-demand instance, saving plan, etc
+
+
+### Change Availabilty Zone of Instance 
+- While Creating Instance
+- Network > Subnet
+- Select the desired AZ
