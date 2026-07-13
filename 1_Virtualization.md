@@ -19,7 +19,7 @@ Software that create and run virtual machines. e.g Oracle VirtualBox
 - Virtual box share hardware resources from Host OS
 - Separate set of virtual CPU, RAM, storage etc
 - VMS are fully isolated (independent of hosted OS)
-![alt text](image.png)
+![alt text](Assets/image.png)
 
 **Benefits of VM** : 
 - We don't need new resources to use different OS
