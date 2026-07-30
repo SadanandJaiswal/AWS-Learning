@@ -127,3 +127,37 @@ You create these lifecycle rules:
 ### Create Bucket LifeCycle Rule
 - Select the Bucket > Management > Create LifeCycle Rule
 - Select the Activity to perform and provide condition
+
+
+### S3 Snow Family
+The S3 Snao Family is a group of a physicall devices offered by AWS to help move large amount of data to the cloud when using the internet isn't practical
+
+These devices are used when there is too much data to upload over a regular connection or when dealing with remote area without good internet.
+
+- **Snow Family Includes**
+    - **AWS Snowcone** : A small portable device for few terabytes of data.
+    - **AWS Snowball** : A large device for moving petabytes of data and can also be used for edge computing.
+    - **AWS Snowmobile** : A massive truck size container used for exabyte-scale data transfers, typically used by big companies moving entire data centers.
+
+These devices help you transfer data quickly, securely, and cost effectively to AWS, especially when internet speed or reliability is an issue.
+
+
+### S3 Storage Gateway
+It is a hybrid cloud storage service that connects on premises environment to cloud storage on Amazon S3. It helps extend local storage to the cloud by acting as a bridge.
+
+![alt text](Assets/s3_storage_gateway.png)
+
+- **Types of Gateway**  :
+    - **Amazon S3 File Gateway** : Store and access objects in Amazon S3 from NFS or SMB file data with local caching.
+    - **Tape Gateway** : Store virtual tapes in Amazon S3 using iSCSI-VTL, and store archived tapes in Amazon S3 Glacier Flexible Retrieval Amazon S3 Glacier Deep Archive.
+    - **Amazon FSx File Gateway** : Access fully managed file shares in Amazon FSx for Windows File Server using SMB.
+    - **Volume Gateway** : Store and access iSCSI block storage volumes in Amazon S3.
+
+#### Full Form
+| Term | Full Form | Purpose |
+|------|-----------|---------|
+| **NFS** | **Network File System** | A file-sharing protocol commonly used in Linux and UNIX systems. It allows users to access files over a network as if they were stored locally. |
+| **SMB** | **Server Message Block** | A network file-sharing protocol primarily used by Windows systems to share files, printers, and other network resources. |
+| **iSCSI** | **Internet Small Computer Systems Interface** | A block storage protocol that carries SCSI commands over IP networks, allowing remote storage devices to appear as locally attached disks. |
+| **VTL** | **Virtual Tape Library** | A software-based tape library that emulates physical tape drives, enabling existing backup software to store backups on virtual tapes in the cloud. |
+| **Amazon FSx** | **Amazon File System X** | A fully managed AWS service that provides high-performance file systems for workloads requiring shared file storage, such as Windows, Lustre, NetApp ONTAP, and OpenZFS. |
