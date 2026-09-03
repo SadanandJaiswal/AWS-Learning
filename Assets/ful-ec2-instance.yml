@@ -1,0 +1,37 @@
+Resources:
+  FulEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t3.micro
+      ImageId: ami-0b79f6b294a030f24  # AMI ID for your region
+      SecurityGroupIds:
+        - !Ref InstanceSecurityGroup
+      Tags:
+        - Key: Name
+          Value: MyFulInstance
+      UserData:
+        Fn::Base64: |
+          #!/bin/bash
+          yum update -y
+          yum install -y nginx
+          systemctl start nginx
+          systemctl enable nginx
+
+          # create a sample HTML file
+          echo "<html><body><h1>Welcome to My Ful EC2 Instance!</h1></body></html>" > /usr/share/nginx/html/index.html
+
+
+  InstanceSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Enable HTTP access
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+  
+  ElasticIP:
+    Type: AWS::EC2::EIP
+    Properties:
+      InstanceId: !Ref FulEC2Instance

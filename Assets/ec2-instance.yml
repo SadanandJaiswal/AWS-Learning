@@ -1,0 +1,9 @@
+Resources:
+  SimpleEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t3.micro
+      ImageId: ami-0b79f6b294a030f24  # AMI ID for your region
+      Tags:
+        - Key: Name
+          Value: MySimpleInstance
