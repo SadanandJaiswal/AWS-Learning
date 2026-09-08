@@ -1,0 +1,607 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0a0a0a;
+    color: #f4f4f2;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 90px;
+
+    padding: 0 6vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 10;
+
+    color: white;
+}
+
+.logo {
+    font-family: "Manrope", sans-serif;
+
+    font-size: 21px;
+    font-weight: 700;
+
+    letter-spacing: 5px;
+}
+
+.logo span {
+    font-weight: 300;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    opacity: 0.75;
+}
+
+.dot {
+    width: 4px;
+    height: 4px;
+
+    background: white;
+    border-radius: 50%;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    height: 100vh;
+    min-height: 700px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.hero-image-wrapper {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transform: scale(1.02);
+
+    animation: heroZoom 12s ease-out forwards;
+}
+
+@keyframes heroZoom {
+
+    from {
+        transform: scale(1.08);
+    }
+
+    to {
+        transform: scale(1);
+    }
+
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.72) 0%,
+            rgba(0,0,0,0.35) 45%,
+            rgba(0,0,0,0.08) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(0,0,0,0.7) 0%,
+            transparent 45%
+        );
+}
+
+.hero-content {
+    position: relative;
+
+    margin-left: 9vw;
+
+    max-width: 700px;
+
+    z-index: 2;
+}
+
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 5px;
+
+    margin-bottom: 28px;
+
+    opacity: 0.75;
+}
+
+.hero h1 {
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(55px, 7vw, 110px);
+
+    line-height: 0.92;
+
+    letter-spacing: -5px;
+
+    font-weight: 600;
+}
+
+.hero h1 span {
+    font-weight: 300;
+}
+
+.hero-description {
+    max-width: 400px;
+
+    margin-top: 38px;
+
+    font-size: 14px;
+    line-height: 1.8;
+
+    color: rgba(255,255,255,0.7);
+}
+
+.hero-line {
+    width: 100px;
+    height: 1px;
+
+    background: rgba(255,255,255,0.7);
+
+    margin-top: 35px;
+}
+
+.scroll-indicator {
+    position: absolute;
+
+    bottom: 40px;
+    right: 6vw;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    font-size: 9px;
+    letter-spacing: 3px;
+
+    opacity: 0.7;
+}
+
+.scroll-line {
+    width: 55px;
+    height: 1px;
+
+    background: white;
+}
+
+
+/* =====================================================
+   COLLECTION
+===================================================== */
+
+.collection {
+    max-width: 1500px;
+
+    margin: auto;
+
+    padding: 150px 6vw 160px;
+}
+
+.section-heading {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+
+    margin-bottom: 80px;
+}
+
+.section-number {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    opacity: 0.45;
+
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(45px, 6vw, 85px);
+
+    line-height: 0.9;
+
+    letter-spacing: -4px;
+
+    font-weight: 500;
+}
+
+.section-description {
+    max-width: 330px;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    color: rgba(255,255,255,0.5);
+
+    margin-bottom: 5px;
+}
+
+
+/* =====================================================
+   VEHICLE CARDS
+===================================================== */
+
+.vehicle {
+    position: relative;
+
+    overflow: hidden;
+
+    background: #151515;
+
+    cursor: pointer;
+}
+
+.vehicle-image-wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+.vehicle img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.8s cubic-bezier(.2,.8,.2,1),
+        filter 0.8s ease;
+}
+
+.vehicle:hover img {
+    transform: scale(1.07);
+
+    filter: brightness(0.75);
+}
+
+.vehicle-gradient {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            0deg,
+            rgba(0,0,0,0.85) 0%,
+            rgba(0,0,0,0.15) 50%,
+            transparent 75%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   JET
+===================================================== */
+
+.jet-card {
+    width: 100%;
+
+    height: 650px;
+
+    margin-bottom: 30px;
+}
+
+.jet-card img {
+    object-position: center;
+}
+
+
+/* =====================================================
+   CARS GRID
+===================================================== */
+
+.cars-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+}
+
+.car-card {
+    height: 500px;
+}
+
+.car-card:nth-child(1) {
+    margin-top: 0;
+}
+
+.car-card:nth-child(2) {
+    margin-top: 100px;
+}
+
+.car-card:nth-child(3) {
+    margin-top: -30px;
+}
+
+.car-card:nth-child(4) {
+    margin-top: 70px;
+}
+
+
+/* =====================================================
+   VEHICLE INFO
+===================================================== */
+
+.vehicle-info {
+    position: absolute;
+
+    left: 35px;
+    right: 35px;
+    bottom: 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+
+    z-index: 2;
+}
+
+.vehicle-category {
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    opacity: 0.65;
+
+    margin-bottom: 10px;
+}
+
+.vehicle h3 {
+    font-family: "Manrope", sans-serif;
+
+    font-size: 28px;
+
+    font-weight: 500;
+
+    letter-spacing: -1px;
+}
+
+.vehicle-details {
+    text-align: right;
+
+    font-size: 10px;
+
+    line-height: 1.7;
+
+    letter-spacing: 1px;
+
+    color: rgba(255,255,255,0.65);
+
+    transform: translateY(10px);
+
+    opacity: 0;
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+.vehicle:hover .vehicle-details {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    border-top: 1px solid rgba(255,255,255,0.1);
+
+    padding: 70px 6vw;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.footer-logo {
+    font-family: "Manrope", sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+.footer-logo span {
+    font-weight: 300;
+}
+
+footer p {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    opacity: 0.4;
+}
+
+.copyright {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.35;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .header {
+        padding: 0 5vw;
+    }
+
+    .header-right {
+        display: none;
+    }
+
+    .hero-content {
+        margin-left: 7vw;
+        margin-right: 7vw;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .collection {
+        padding: 100px 5vw;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .section-description {
+        margin-top: 35px;
+    }
+
+    .jet-card {
+        height: 500px;
+    }
+
+    .cars-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .car-card,
+    .car-card:nth-child(1),
+    .car-card:nth-child(2),
+    .car-card:nth-child(3),
+    .car-card:nth-child(4) {
+        height: 450px;
+        margin-top: 0;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 500px) {
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero-description {
+        font-size: 12px;
+    }
+
+    .jet-card {
+        height: 400px;
+    }
+
+    .car-card,
+    .car-card:nth-child(1),
+    .car-card:nth-child(2),
+    .car-card:nth-child(3),
+    .car-card:nth-child(4) {
+        height: 380px;
+    }
+
+    .vehicle-info {
+        left: 22px;
+        right: 22px;
+        bottom: 22px;
+    }
+
+    .vehicle h3 {
+        font-size: 22px;
+    }
+
+    .vehicle-details {
+        display: none;
+    }
+
+}
