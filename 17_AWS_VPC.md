@@ -1,4 +1,4 @@
-# AWS VPC (Virtual Private Network)
+# AWS VPC (Virtual Private Cloud)
 A private, isolated network within the AWS cloud. Where you can launch and manage your resources securely.
 
 **Why?** : To securely isolate and control network environment.
@@ -111,3 +111,36 @@ Managed VPN service that enables a secure remote access to your AWS resources an
 ![alt text](Assets/VPC-FLow.png)
 
 ![alt text](Assets/VPC-Components.png)
+
+
+<hr>
+
+
+### Practical with VPC
+#### VPC Creation
+- Create VPC > VPC Only (as of now we only wnat VPC not subnet)
+- Give name, select IPV4 CIDR Block : (10.0.0.0/20)
+- IPV6 CIDR Block (optional)
+
+#### Subnet Creation
+- Select VPC to which subnet will be created
+- Name, Availability Zone, 
+- Subnet CIDR Block Range : (10.0.1.0/24)
+
+#### Route Table
+- By default when VPC is created, main route table is cretaed for that VPC
+- Create Route Table > Name > Select VPC
+
+#### Internet Gateway
+- Create Internet gateway, just require name 
+- Select Internet Gateway > Action > Attach to VPC
+
+- Associate Subnet (Public) to route table
+- Create new Route , expose to internet, attach internet gateway
+
+#### Create EC2 Instance
+- Cretae EC2 instance > Name > Select AMI (amaozn machine image) > Instance Type
+- Edit Network Settings > Select VPC 
+- Select Subnet (private for this case)
+- For rest select default settings > Launch Instance
+- This will create the Instance and Private IP will be from the range of selectd subnet CIDR Block range
